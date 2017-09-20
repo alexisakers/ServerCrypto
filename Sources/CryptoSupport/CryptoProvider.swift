@@ -1,5 +1,5 @@
 /**
- *  JavaScriptKit
+ *  SwiftCrypto
  *  Copyright (c) 2017 Alexis Aubry. Licensed under the MIT license.
  */
 
@@ -43,7 +43,7 @@ public class CryptoProvider {
 
     }
 
-    private var loadedComponents: Set<Component> = []
+    private static var loadedComponents: Set<Component> = []
 
     /**
      * Loads the specified OpenSSL components if they are not already loaded.
@@ -51,7 +51,7 @@ public class CryptoProvider {
      * - parameter components: The components to load.
      */
 
-    public func load(_ components: Component...) {
+    public static func load(_ components: Component...) {
 
         guard components.count > 0 else {
             return

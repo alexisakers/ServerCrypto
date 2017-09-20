@@ -1,5 +1,5 @@
 /**
- *  JavaScriptKit
+ *  SwiftCrypto
  *  Copyright (c) 2017 Alexis Aubry. Licensed under the MIT license.
  */
 
@@ -10,7 +10,7 @@ import CTLS
  * The structured representation of an OpenSSL error.
  */
 
-public struct CryptoError {
+public struct CryptoError: LocalizedError {
 
     // MARK: - Properties
 
@@ -18,7 +18,15 @@ public struct CryptoError {
     public let code: UInt
 
     /// The description of the error.
-    public let localizedDescription: String
+    private let errDescription: String
+
+    public var errorDescription: String {
+        return errDescription
+    }
+
+    public var localizedDescription: String {
+        return errDescription
+    }
 
     // MARK: - Lifecycle
 
@@ -28,9 +36,9 @@ public struct CryptoError {
      * - parameter localizedDescription: The description of the error.
      */
 
-    private init(code: UInt, localizedDescription: String) {
+    private init(code: UInt, errDescription: String) {
         self.code = code
-        self.localizedDescription = localizedDescription
+        self.errDescription = errDescription
     }
 
     // MARK: - Getting the Latest Error
@@ -47,8 +55,8 @@ public struct CryptoError {
         var errorStringBuffer = [Int8]()
         ERR_error_string(code, &errorStringBuffer)
 
-        let localizedDescription = String(cString: &errorStringBuffer)
-        return CryptoError(code: code, localizedDescription: localizedDescription)
+        let errDescription = String(cString: &errorStringBuffer)
+        return CryptoError(code: code, errDescription: errDescription)
 
     }
 

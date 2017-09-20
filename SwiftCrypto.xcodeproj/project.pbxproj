@@ -22,14 +22,19 @@
 
 /* Begin PBXBuildFile section */
 		5563EF071F72AD07001A99A9 /* CryptoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563EF061F72AD07001A99A9 /* CryptoError.swift */; };
+		5563EF0B1F72B7DD001A99A9 /* RawBytesProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563EF0A1F72B7DD001A99A9 /* RawBytesProviding.swift */; };
+		5563EF0E1F72BC05001A99A9 /* HashTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563EF0C1F72BC00001A99A9 /* HashTestData.swift */; };
+		5563EF101F72BC60001A99A9 /* Exports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563EF0F1F72BC5F001A99A9 /* Exports.swift */; };
+		5563EF121F72C1E9001A99A9 /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563EF111F72C1E9001A99A9 /* Hex.swift */; };
+		5563EF191F72C8F8001A99A9 /* HexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563EF181F72C8F8001A99A9 /* HexTests.swift */; };
 		OBJ_28 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_34 /* SwiftCryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* SwiftCryptoTests.swift */; };
+		OBJ_34 /* HashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* HashTests.swift */; };
 		OBJ_36 /* Signature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftCrypto::Signature::Product" /* Signature.framework */; };
 		OBJ_37 /* Hash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftCrypto::Hash::Product" /* Hash.framework */; };
 		OBJ_38 /* CryptoSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftCrypto::CryptoSupport::Product" /* CryptoSupport.framework */; };
 		OBJ_49 /* SwiftCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* SwiftCrypto.swift */; };
 		OBJ_51 /* CryptoSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftCrypto::CryptoSupport::Product" /* CryptoSupport.framework */; };
-		OBJ_57 /* SwiftCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* SwiftCrypto.swift */; };
+		OBJ_57 /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Hash.swift */; };
 		OBJ_59 /* CryptoSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftCrypto::CryptoSupport::Product" /* CryptoSupport.framework */; };
 		OBJ_65 /* CryptoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* CryptoProvider.swift */; };
 /* End PBXBuildFile section */
@@ -81,9 +86,14 @@
 
 /* Begin PBXFileReference section */
 		5563EF061F72AD07001A99A9 /* CryptoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoError.swift; sourceTree = "<group>"; };
-		OBJ_11 /* SwiftCrypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCrypto.swift; sourceTree = "<group>"; };
+		5563EF0A1F72B7DD001A99A9 /* RawBytesProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawBytesProviding.swift; sourceTree = "<group>"; };
+		5563EF0C1F72BC00001A99A9 /* HashTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTestData.swift; sourceTree = "<group>"; };
+		5563EF0F1F72BC5F001A99A9 /* Exports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exports.swift; sourceTree = "<group>"; };
+		5563EF111F72C1E9001A99A9 /* Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
+		5563EF181F72C8F8001A99A9 /* HexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexTests.swift; sourceTree = "<group>"; };
+		OBJ_11 /* Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
 		OBJ_13 /* SwiftCrypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCrypto.swift; sourceTree = "<group>"; };
-		OBJ_16 /* SwiftCryptoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCryptoTests.swift; sourceTree = "<group>"; };
+		OBJ_16 /* HashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTests.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* CryptoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoProvider.swift; sourceTree = "<group>"; };
 		"SwiftCrypto::CryptoSupport::Product" /* CryptoSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,10 +139,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5563EF151F72C5D2001A99A9 /* Hash */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_16 /* HashTests.swift */,
+				5563EF0C1F72BC00001A99A9 /* HashTestData.swift */,
+			);
+			path = Hash;
+			sourceTree = "<group>";
+		};
+		5563EF171F72C5E7001A99A9 /* CryptoSupport */ = {
+			isa = PBXGroup;
+			children = (
+				5563EF181F72C8F8001A99A9 /* HexTests.swift */,
+			);
+			path = CryptoSupport;
+			sourceTree = "<group>";
+		};
 		OBJ_10 /* Hash */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_11 /* SwiftCrypto.swift */,
+				5563EF0F1F72BC5F001A99A9 /* Exports.swift */,
+				OBJ_11 /* Hash.swift */,
 			);
 			name = Hash;
 			path = Sources/Hash;
@@ -158,7 +186,8 @@
 		OBJ_15 /* SwiftCryptoTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_16 /* SwiftCryptoTests.swift */,
+				5563EF171F72C5E7001A99A9 /* CryptoSupport */,
+				5563EF151F72C5D2001A99A9 /* Hash */,
 			);
 			name = SwiftCryptoTests;
 			path = Tests/SwiftCryptoTests;
@@ -182,7 +211,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -191,7 +220,6 @@
 				OBJ_17 /* Dependencies */,
 				OBJ_18 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -207,6 +235,8 @@
 		OBJ_8 /* CryptoSupport */ = {
 			isa = PBXGroup;
 			children = (
+				5563EF111F72C1E9001A99A9 /* Hex.swift */,
+				5563EF0A1F72B7DD001A99A9 /* RawBytesProviding.swift */,
 				OBJ_9 /* CryptoProvider.swift */,
 				5563EF061F72AD07001A99A9 /* CryptoError.swift */,
 			);
@@ -315,7 +345,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_18 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -343,7 +373,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_34 /* SwiftCryptoTests.swift in Sources */,
+				OBJ_34 /* HashTests.swift in Sources */,
+				5563EF191F72C8F8001A99A9 /* HexTests.swift in Sources */,
+				5563EF0E1F72BC05001A99A9 /* HashTestData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +391,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_57 /* SwiftCrypto.swift in Sources */,
+				OBJ_57 /* Hash.swift in Sources */,
+				5563EF101F72BC60001A99A9 /* Exports.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +401,8 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_65 /* CryptoProvider.swift in Sources */,
+				5563EF121F72C1E9001A99A9 /* Hex.swift in Sources */,
+				5563EF0B1F72B7DD001A99A9 /* RawBytesProviding.swift in Sources */,
 				5563EF071F72AD07001A99A9 /* CryptoError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
