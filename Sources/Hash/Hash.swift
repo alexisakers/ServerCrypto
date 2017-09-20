@@ -41,7 +41,7 @@ public enum Hasher {
     case null
 
     /// Creates a message digest description for the hash provider.
-    fileprivate func makeMessageDigest() ->  UnsafePointer<EVP_MD>? {
+    public func makeMessageDigest() ->  UnsafePointer<EVP_MD>? {
 
         switch self {
         case .md4: return EVP_md4()
@@ -74,51 +74,51 @@ extension Hasher {
     public func makeHash<T: RandomAccessCollection & MutableCollection & RawBytesProviding>(for bytes: T) throws -> Data
         where T.Element == UInt8, T.IndexDistance == Int {
 
-        CryptoProvider.load(.digests, .cryptoErrorStrings)
+            CryptoProvider.load(.digests, .cryptoErrorStrings)
 
-        guard let digestDescription = makeMessageDigest() else {
-            throw CryptoError.latest
-        }
+            guard let digestDescription = makeMessageDigest() else {
+                throw CryptoError.latest
+            }
 
-        guard let context = EVP_MD_CTX_create() else {
-            throw CryptoError.latest
-        }
+            guard let context = EVP_MD_CTX_create() else {
+                throw CryptoError.latest
+            }
 
-        defer {
-            EVP_MD_CTX_destroy(context)
-        }
+            defer {
+                EVP_MD_CTX_destroy(context)
+            }
 
-        /* Properties */
+            /* Properties */
 
-        var digestLength = UInt32(EVP_MD_size(digestDescription))
-        var digest = Data(count: Int(digestLength))
+            var digestLength = UInt32(EVP_MD_size(digestDescription))
+            var digest = Data(count: Int(digestLength))
 
-        /* Hashing */
+            /* Hashing */
 
-        guard EVP_DigestInit(context, digestDescription) == 1 else {
-            throw CryptoError.latest
-        }
+            guard EVP_DigestInit(context, digestDescription) == 1 else {
+                throw CryptoError.latest
+            }
 
-        let updateResult = bytes.withUnsafeRawBytes {
-            return EVP_DigestUpdate(context, $0, bytes.count)
-        }
+            let updateResult = bytes.withUnsafeRawBytes {
+                return EVP_DigestUpdate(context, $0, bytes.count)
+            }
 
-        guard updateResult == 1 else {
-            throw CryptoError.latest
-        }
+            guard updateResult == 1 else {
+                throw CryptoError.latest
+            }
 
-        /* Final */
+            /* Final */
 
-        let finalResult = digest.withUnsafeMutableBytes {
-            (mutableBody: UnsafeMutablePointer<UInt8>) -> Int32 in
-            return EVP_DigestFinal(context, mutableBody, &digestLength)
-        }
+            let finalResult = digest.withUnsafeMutableBytes {
+                (mutableBody: UnsafeMutablePointer<UInt8>) -> Int32 in
+                return EVP_DigestFinal(context, mutableBody, &digestLength)
+            }
 
-        guard finalResult == 1 else {
-            throw CryptoError.latest
-        }
+            guard finalResult == 1 else {
+                throw CryptoError.latest
+            }
 
-        return digest.subdata(in: 0 ..< Int(digestLength))
+            return digest.prefix(upTo: Int(digestLength))
 
     }
 

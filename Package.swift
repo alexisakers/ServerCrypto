@@ -14,7 +14,7 @@ let package = Package(
     targets: [
         .target(name: "CryptoSupport", dependencies: []),
         .target(name: "Hash", dependencies: ["CryptoSupport"]),
-        .target(name: "Signature", dependencies: ["CryptoSupport"]),
+        .target(name: "Signature", dependencies: ["CryptoSupport", "Hash"]),
         .testTarget(name: "SwiftCryptoTests",dependencies: ["Hash", "Signature"]),
     ]
 )
