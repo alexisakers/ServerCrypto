@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		5563EF071F72AD07001A99A9 /* CryptoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563EF061F72AD07001A99A9 /* CryptoError.swift */; };
 		OBJ_28 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_34 /* SwiftCryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* SwiftCryptoTests.swift */; };
 		OBJ_36 /* Signature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftCrypto::Signature::Product" /* Signature.framework */; };
@@ -30,7 +31,7 @@
 		OBJ_51 /* CryptoSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftCrypto::CryptoSupport::Product" /* CryptoSupport.framework */; };
 		OBJ_57 /* SwiftCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* SwiftCrypto.swift */; };
 		OBJ_59 /* CryptoSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftCrypto::CryptoSupport::Product" /* CryptoSupport.framework */; };
-		OBJ_65 /* SwiftCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* SwiftCrypto.swift */; };
+		OBJ_65 /* CryptoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* CryptoProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,11 +80,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5563EF061F72AD07001A99A9 /* CryptoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoError.swift; sourceTree = "<group>"; };
 		OBJ_11 /* SwiftCrypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCrypto.swift; sourceTree = "<group>"; };
 		OBJ_13 /* SwiftCrypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCrypto.swift; sourceTree = "<group>"; };
 		OBJ_16 /* SwiftCryptoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCryptoTests.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		OBJ_9 /* SwiftCrypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCrypto.swift; sourceTree = "<group>"; };
+		OBJ_9 /* CryptoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoProvider.swift; sourceTree = "<group>"; };
 		"SwiftCrypto::CryptoSupport::Product" /* CryptoSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"SwiftCrypto::Hash::Product" /* Hash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Hash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"SwiftCrypto::Signature::Product" /* Signature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Signature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,7 +207,8 @@
 		OBJ_8 /* CryptoSupport */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_9 /* SwiftCrypto.swift */,
+				OBJ_9 /* CryptoProvider.swift */,
+				5563EF061F72AD07001A99A9 /* CryptoError.swift */,
 			);
 			name = CryptoSupport;
 			path = Sources/CryptoSupport;
@@ -364,7 +367,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_65 /* SwiftCrypto.swift in Sources */,
+				OBJ_65 /* CryptoProvider.swift in Sources */,
+				5563EF071F72AD07001A99A9 /* CryptoError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,12 +436,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = /usr/local/opt/openssl/include;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-L/usr/local/opt/openssl/lib";
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USE_HEADERMAP = NO;
@@ -495,11 +501,13 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_OPTIMIZATION_LEVEL = s;
+				HEADER_SEARCH_PATHS = /usr/local/opt/openssl/include;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = "-L/usr/local/opt/openssl/lib";
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				USE_HEADERMAP = NO;
