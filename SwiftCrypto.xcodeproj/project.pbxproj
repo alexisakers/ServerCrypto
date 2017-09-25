@@ -39,6 +39,7 @@
 		55B234951F794F1B00CCCEE9 /* ECDSATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563EF231F72DEFC001A99A9 /* ECDSATests.swift */; };
 		55B234971F795A8200CCCEE9 /* RSATestVectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563EF291F72DEFD001A99A9 /* RSATestVectors.swift */; };
 		55B234981F795B2500CCCEE9 /* RSATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563EF281F72DEFC001A99A9 /* RSATests.swift */; };
+		55B2349A1F795B9600CCCEE9 /* CryptoErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B234991F795B9600CCCEE9 /* CryptoErrorTests.swift */; };
 		OBJ_28 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_34 /* HashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* HashTests.swift */; };
 		OBJ_36 /* Signature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftCrypto::Signature::Product" /* Signature.framework */; };
@@ -121,6 +122,7 @@
 		5563EF291F72DEFD001A99A9 /* RSATestVectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSATestVectors.swift; sourceTree = "<group>"; };
 		5563EF2A1F72DF14001A99A9 /* Exports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exports.swift; sourceTree = "<group>"; };
 		5563EF411F72EE48001A99A9 /* TestFixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestFixtures; sourceTree = "<group>"; };
+		55B234991F795B9600CCCEE9 /* CryptoErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoErrorTests.swift; sourceTree = "<group>"; };
 		OBJ_11 /* Hasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hasher.swift; sourceTree = "<group>"; };
 		OBJ_13 /* Signer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signer.swift; sourceTree = "<group>"; };
 		OBJ_16 /* HashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTests.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				5563EF181F72C8F8001A99A9 /* HexTests.swift */,
+				55B234991F795B9600CCCEE9 /* CryptoErrorTests.swift */,
 			);
 			path = CryptoSupport;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				55B234981F795B2500CCCEE9 /* RSATests.swift in Sources */,
 				5563EF2F1F72DFD2001A99A9 /* HMACTests.swift in Sources */,
 				5563EF2C1F72DFD2001A99A9 /* SignatureTestsCoordinator.swift in Sources */,
+				55B2349A1F795B9600CCCEE9 /* CryptoErrorTests.swift in Sources */,
 				55B234941F794ABB00CCCEE9 /* ECDSASignatures.swift in Sources */,
 				55B234951F794F1B00CCCEE9 /* ECDSATests.swift in Sources */,
 				5563EF301F72DFD2001A99A9 /* HMACSignatures.swift in Sources */,
