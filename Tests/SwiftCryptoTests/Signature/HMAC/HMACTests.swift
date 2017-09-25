@@ -104,10 +104,6 @@ class HMACTests: XCTestCase {
 
 extension HMACTests {
     
-    ///
-    /// All the tests to run on Linux.
-    ///
-    
     static var allTests : [(String, (HMACTests) -> () throws -> Void)] {
         return [
             ("testHMD4", testHMD4),

@@ -37,6 +37,8 @@
 		5563EF431F72EE59001A99A9 /* TestFixtures in Resources */ = {isa = PBXBuildFile; fileRef = 5563EF411F72EE48001A99A9 /* TestFixtures */; };
 		55B234941F794ABB00CCCEE9 /* ECDSASignatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563EF271F72DEFC001A99A9 /* ECDSASignatures.swift */; };
 		55B234951F794F1B00CCCEE9 /* ECDSATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563EF231F72DEFC001A99A9 /* ECDSATests.swift */; };
+		55B234971F795A8200CCCEE9 /* RSATestVectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563EF291F72DEFD001A99A9 /* RSATestVectors.swift */; };
+		55B234981F795B2500CCCEE9 /* RSATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563EF281F72DEFC001A99A9 /* RSATests.swift */; };
 		OBJ_28 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_34 /* HashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* HashTests.swift */; };
 		OBJ_36 /* Signature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftCrypto::Signature::Product" /* Signature.framework */; };
@@ -198,8 +200,7 @@
 				5563EF261F72DEFC001A99A9 /* SignatureTestsCoordinator.swift */,
 				55B234921F79496D00CCCEE9 /* HMAC */,
 				55B234931F794A1F00CCCEE9 /* ECDSA */,
-				5563EF281F72DEFC001A99A9 /* RSATests.swift */,
-				5563EF291F72DEFD001A99A9 /* RSATestVectors.swift */,
+				55B234961F7959A900CCCEE9 /* RSA */,
 			);
 			path = Signature;
 			sourceTree = "<group>";
@@ -220,6 +221,15 @@
 				5563EF271F72DEFC001A99A9 /* ECDSASignatures.swift */,
 			);
 			path = ECDSA;
+			sourceTree = "<group>";
+		};
+		55B234961F7959A900CCCEE9 /* RSA */ = {
+			isa = PBXGroup;
+			children = (
+				5563EF281F72DEFC001A99A9 /* RSATests.swift */,
+				5563EF291F72DEFD001A99A9 /* RSATestVectors.swift */,
+			);
+			path = RSA;
 			sourceTree = "<group>";
 		};
 		OBJ_10 /* Hash */ = {
@@ -458,9 +468,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				55B234971F795A8200CCCEE9 /* RSATestVectors.swift in Sources */,
 				OBJ_34 /* HashTests.swift in Sources */,
 				5563EF191F72C8F8001A99A9 /* HexTests.swift in Sources */,
 				5563EF0E1F72BC05001A99A9 /* HashTestData.swift in Sources */,
+				55B234981F795B2500CCCEE9 /* RSATests.swift in Sources */,
 				5563EF2F1F72DFD2001A99A9 /* HMACTests.swift in Sources */,
 				5563EF2C1F72DFD2001A99A9 /* SignatureTestsCoordinator.swift in Sources */,
 				55B234941F794ABB00CCCEE9 /* ECDSASignatures.swift in Sources */,

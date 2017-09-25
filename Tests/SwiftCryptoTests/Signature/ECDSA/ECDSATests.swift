@@ -9,7 +9,7 @@ import Foundation
 
 class ECDSATests: XCTestCase {
 
-    /// Tests ECDSA with SHA1
+    /// Tests ECDSA with SHA1.
     func testES1() throws {
         
         try SignatureTestsCoordinator.testSignatures(ecdsaP256withSHA1Signatures)
