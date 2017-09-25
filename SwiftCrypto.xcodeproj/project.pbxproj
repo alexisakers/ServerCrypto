@@ -194,14 +194,22 @@
 			isa = PBXGroup;
 			children = (
 				5563EF261F72DEFC001A99A9 /* SignatureTestsCoordinator.swift */,
-				5563EF251F72DEFC001A99A9 /* HMACTests.swift */,
-				5563EF241F72DEFC001A99A9 /* HMACSignatures.swift */,
+				55B234921F79496D00CCCEE9 /* HMAC */,
 				5563EF231F72DEFC001A99A9 /* ECDSATests.swift */,
 				5563EF281F72DEFC001A99A9 /* RSATests.swift */,
 				5563EF271F72DEFC001A99A9 /* ECDSATestVectors.swift */,
 				5563EF291F72DEFD001A99A9 /* RSATestVectors.swift */,
 			);
 			path = Signature;
+			sourceTree = "<group>";
+		};
+		55B234921F79496D00CCCEE9 /* HMAC */ = {
+			isa = PBXGroup;
+			children = (
+				5563EF251F72DEFC001A99A9 /* HMACTests.swift */,
+				5563EF241F72DEFC001A99A9 /* HMACSignatures.swift */,
+			);
+			path = HMAC;
 			sourceTree = "<group>";
 		};
 		OBJ_10 /* Hash */ = {
