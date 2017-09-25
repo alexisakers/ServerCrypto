@@ -18,7 +18,7 @@ public enum Signer {
     case hmac(HMACKey)
 
     /// A key-pair based signer (RSA, ECDSA, ...).
-    case asymmetric(KeyPair)
+    case asymmetric(AsymmetricKey)
 
     var rawKey: UnsafeMutablePointer<EVP_PKEY> {
 
@@ -26,8 +26,8 @@ public enum Signer {
         case .hmac(let key):
             return key.underlyingKeyPointer
 
-        case .asymmetric(let keyPair):
-            return keyPair.underlyingKeyPointer
+        case .asymmetric(let key):
+            return key.keyContainer.underlyingKeyPointer
 
         }
 
