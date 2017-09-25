@@ -206,3 +206,13 @@ let hmacData = ...
 let messageData = "Hello world".data(using: .utf8)!
 let isValid = signer.verify(signature: hmacData, for: messageData, with: .sha256) // Returns a Bool
 ~~~
+
+## Author
+
+Alexis Aubry, me@alexaubry.fr
+
+You can find me on Twitter : [@_alexaubry](https://twitter.com/_alexaubry)
+
+## License
+
+ServerCrypto is available under the MIT License. See the [LICENSE](LICENSE) file for more info.
