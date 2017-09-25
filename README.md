@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/alexaubry/ServerCrypto.svg?branch=master)](https://travis-ci.org/alexaubry/ServerCrypto)
 [![Requires Swift 4.0](https://img.shields.io/badge/Swift-4.0-ee4f37.svg)]()
 
-ServerCrypto is a Swift library that brings easy cryptography to the server.
+ServerCrypto is a library that makes server-side cryptography easy in Swift.
 
 ## Installation
 
@@ -31,9 +31,9 @@ swift build -Xswiftc -I/usr/local/opt/openssl/include -Xlinker -L/usr/local/opt/
 
 ### Hashing
 
-To compute the hash of a `Data` object, you use an instance of `Hasher`.
+To compute the hash of a sequence of bytes, you use an instance of `Hasher`.
 
-Hasher can generate hasher for `Data`, `[UInt8]` ; and any type than conforms to the `RandomAccessCollection`, `MutableCollection` and `RawBytesProviding` protocols with `Element == UInt8` and `IndexDistance == Int`.
+Hasher can generate hashes for `Data`, `[UInt8]` ; and any type than conforms to the `RandomAccessCollection`, `MutableCollection` and `RawBytesProviding` protocols with `Element == UInt8` and `IndexDistance == Int`.
 
 The following hashing algorithms are supported:
 
@@ -49,7 +49,7 @@ To compute the SHA-256 hash of a String, write the following code:
 let hasher = Hasher.sha256
 
 let messageData = "Hello world".data(using: .utf8)!
-let hashData = try hasher.makeHash(for: messageData)
+let hashData = try hasher.makeHash(for: messageData) // Returns a Data object
 let hashHexString = hashData.hexString
 ~~~
 
