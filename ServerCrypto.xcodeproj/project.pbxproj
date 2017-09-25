@@ -212,10 +212,10 @@
 		OBJ_29 /* Signature */ = {
 			isa = PBXGroup;
 			children = (
+				OBJ_39 /* SignatureTestsCoordinator.swift */,
 				OBJ_30 /* ECDSA */,
 				OBJ_33 /* HMAC */,
 				OBJ_36 /* RSA */,
-				OBJ_39 /* SignatureTestsCoordinator.swift */,
 			);
 			path = Signature;
 			sourceTree = "<group>";
@@ -223,8 +223,8 @@
 		OBJ_30 /* ECDSA */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_31 /* ECDSASignatures.swift */,
 				OBJ_32 /* ECDSATests.swift */,
+				OBJ_31 /* ECDSASignatures.swift */,
 			);
 			path = ECDSA;
 			sourceTree = "<group>";
@@ -232,8 +232,8 @@
 		OBJ_33 /* HMAC */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_34 /* HMACSignatures.swift */,
 				OBJ_35 /* HMACTests.swift */,
+				OBJ_34 /* HMACSignatures.swift */,
 			);
 			path = HMAC;
 			sourceTree = "<group>";
@@ -241,8 +241,8 @@
 		OBJ_36 /* RSA */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_37 /* RSATestVectors.swift */,
 				OBJ_38 /* RSATests.swift */,
+				OBJ_37 /* RSATestVectors.swift */,
 			);
 			path = RSA;
 			sourceTree = "<group>";

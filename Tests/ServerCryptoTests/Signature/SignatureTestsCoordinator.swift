@@ -15,11 +15,12 @@ extension SignatureTestsCoordinator {
 
     static func path(ofKey keyName: String) -> String? {
 
-        #if os(macOS)
+        #if Xcode
             let bundle = Bundle(for: SignatureTestsCoordinator.self)
             return bundle.path(forResource: keyName, ofType: "pem", inDirectory: "TestFixtures")
         #else
-            let fixturesPath = NSString(string: "~/Signature-TestFixtures").expandingTildeInPath
+            let cWorkingDirectory = getenv("PWD")!
+            let fixturesPath = String(cString: cWorkingDirectory) + "/TestFixtures"
             let keyPath = fixturesPath + "/" + keyName + ".pem"
             return FileManager.default.fileExists(atPath: keyPath) ? keyPath : nil
         #endif
