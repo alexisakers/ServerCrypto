@@ -12,7 +12,7 @@ import Foundation
 public protocol RawBytesProviding {
 
     /**
-     * Accesses the raw bytes in the data's buffer.
+     * Executes a closure against the raw bytes in the data's buffer.
      */
 
     func withUnsafeRawBytes<ResultType>(_ body: (UnsafeRawPointer) throws -> ResultType) rethrows -> ResultType
