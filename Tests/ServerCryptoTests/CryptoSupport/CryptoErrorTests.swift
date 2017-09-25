@@ -34,3 +34,13 @@ class CryptoErrorTests: XCTestCase {
     }
 
 }
+
+extension CryptoErrorTests {
+
+    static var allTests : [(String, (CryptoErrorTests) -> () throws -> Void)] {
+        return [
+            ("testGetLatestError", testGetLatestError)
+        ]
+    }
+
+}

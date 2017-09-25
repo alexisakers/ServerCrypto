@@ -2,5 +2,10 @@ import XCTest
 @testable import SwiftCryptoTests
 
 XCTMain([
-    testCase(SwiftCryptoTests.allTests),
+    testCase(HexTests.allTests),
+    testCase(CryptoErrorTests.allTests),
+    testCase(HashTests.allTests),
+    testCase(HMACTests.allTests),
+    testCase(ECDSATests.allTests),
+    testCase(RSATests.allTests),
 ])

@@ -83,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55B234A41F79648300CCCEE9 /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinuxMain.swift; path = Tests/LinuxMain.swift; sourceTree = "<group>"; };
 		OBJ_10 /* CryptoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoProvider.swift; sourceTree = "<group>"; };
 		OBJ_11 /* Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
 		OBJ_12 /* RawBytesProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawBytesProviding.swift; sourceTree = "<group>"; };
@@ -175,6 +176,7 @@
 		OBJ_21 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				55B234A41F79648300CCCEE9 /* LinuxMain.swift */,
 				OBJ_22 /* ServerCryptoTests */,
 			);
 			name = Tests;
@@ -213,8 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_39 /* SignatureTestsCoordinator.swift */,
-				OBJ_30 /* ECDSA */,
 				OBJ_33 /* HMAC */,
+				OBJ_30 /* ECDSA */,
 				OBJ_36 /* RSA */,
 			);
 			path = Signature;
