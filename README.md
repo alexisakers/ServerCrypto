@@ -27,7 +27,7 @@ swift build -Xswiftc -I/usr/local/opt/openssl/include -Xlinker -L/usr/local/opt/
 - [HMAC Signature](#hmac-signature)
 - [HMAC Verification](#hmac-verification)
 - [Asymmetric Signature](#asymmetric-signature)
-- Asymmetric Signature Verification
+- [Asymmetric Signature Verification](#asymmetric-signature-verification)
 
 ## Hashing
 
@@ -149,10 +149,10 @@ To compute the SHA-256 ECDSA signature of a String, you need to follow these ste
 ~~~swift
 import Signature
 
-let privateKey = try AsymmetricKey.makePrivateKey(readingPEMAtPath: "path/to/key.pem")
+let privateKey = try AsymmetricKey.makePrivateKey(readingPEMAtPath: "path/to/public/key.pem", passphrase: "...")
 ~~~
 
-You can also load a PEM key from memory using `AsymmetricKey.makePrivateKey(readingPEMData:)`.
+You can also load a PEM key from memory using `AsymmetricKey.makePrivateKey(readingPEMData: Data,passphrase: String?)`.
 
 **2-** Create an asymmetric signer
 
@@ -166,4 +166,43 @@ let signer = Signer.asymmetric(privateKey)
 let messageData = "Hello world".data(using: .utf8)!
 let hmacData = signer.sign(messageData, with: .sha256) // Returns a Data object
 let hmacHexString = hmacData.hexString
+~~~
+
+## Asymmetric Signature Verification
+
+To verify that a signature is valid for the message you expect, you need:
+
+- A message digest / hashing algorithm
+- The public key associated with the expected private key
+- An expected message
+- A signature to verify
+
+You use an instance of `Signer` to verify a signature. The signature must be a `Data` object. The expected message can be any type supported by [`Hasher`](#hashing).
+
+#### Example
+
+To verify that a SHA-256 ECDSA signature of a String is valid for the public key, you need to follow these steps:
+
+**1-** Load the public key from a PEM file
+
+~~~swift
+import Signature
+
+let publicKey = try AsymmetricKey.makePublicKey(readingPEMAtPath: "path/to/private/key.pem")
+~~~
+
+You can also load the key from memory using `AsymmetricKey.makePublicKey(readingPEMData: Data)`.
+
+**2-** Create an asymmetric signer
+
+~~~swift
+let signer = Signer.asymmetric(publicKey)
+~~~
+
+**3-** Verify the signatrure for the message
+
+~~~swift
+let hmacData = ...
+let messageData = "Hello world".data(using: .utf8)!
+let isValid = signer.verify(signature: hmacData, for: messageData, with: .sha256) // Returns a Bool
 ~~~
