@@ -10,7 +10,7 @@ fi
 if [[ $TRAVIS_OS_NAME == 'linux' ]]; then
 
     echo "👉  Installing build dependencies"
-    sudo apt-get install openssl-dev
+    sudo apt-get install libssl-dev
 
     echo "👉  Installing Swift"
     SWIFT_URL=https://swift.org/builds/$LOCAL_SWIFT_BRANCH/ubuntu1404/$LOCAL_SWIFT_VERSION/$LOCAL_SWIFT_VERSION-ubuntu14.04.tar.gz
