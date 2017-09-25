@@ -153,8 +153,8 @@
 		OBJ_13 /* Hash */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_14 /* Exports.swift */,
 				OBJ_15 /* Hasher.swift */,
+				OBJ_14 /* Exports.swift */,
 			);
 			name = Hash;
 			path = Sources/Hash;
@@ -163,10 +163,10 @@
 		OBJ_16 /* Signature */ = {
 			isa = PBXGroup;
 			children = (
+				OBJ_20 /* Signer.swift */,
+				OBJ_19 /* HMACKey.swift */,
 				OBJ_17 /* AsymmetricKey.swift */,
 				OBJ_18 /* Exports.swift */,
-				OBJ_19 /* HMACKey.swift */,
-				OBJ_20 /* Signer.swift */,
 			);
 			name = Signature;
 			path = Sources/Signature;
@@ -194,8 +194,8 @@
 		OBJ_23 /* CryptoSupport */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_24 /* CryptoErrorTests.swift */,
 				OBJ_25 /* HexTests.swift */,
+				OBJ_24 /* CryptoErrorTests.swift */,
 			);
 			path = CryptoSupport;
 			sourceTree = "<group>";
@@ -203,8 +203,8 @@
 		OBJ_26 /* Hash */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_27 /* HashTestData.swift */,
 				OBJ_28 /* HashTests.swift */,
+				OBJ_27 /* HashTestData.swift */,
 			);
 			path = Hash;
 			sourceTree = "<group>";
@@ -291,9 +291,9 @@
 		OBJ_8 /* CryptoSupport */ = {
 			isa = PBXGroup;
 			children = (
+				OBJ_11 /* Hex.swift */,
 				OBJ_9 /* CryptoError.swift */,
 				OBJ_10 /* CryptoProvider.swift */,
-				OBJ_11 /* Hex.swift */,
 				OBJ_12 /* RawBytesProviding.swift */,
 			);
 			name = CryptoSupport;
