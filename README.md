@@ -25,7 +25,7 @@ swift build -Xswiftc -I/usr/local/opt/openssl/include -Xlinker -L/usr/local/opt/
 
 - [Hashing](#hashing)
 - [HMAC Signature](#hmac-signature)
-- HMAC Verification
+- [HMAC Verification](#hmac-verification)
 - Asymmetric Signature
 - Asymmetric Signature Verification
 
@@ -89,6 +89,43 @@ let signer = Signer.hmac(key)
 let messageData = "Hello world".data(using: .utf8)!
 let hmacData = signer.sign(messageData, with: .sha256) // Returns a Data object
 let hmacHexString = hmacData.hexString
+~~~
+
+### HMAC Verification
+
+To verify that an HMAC signature is valid for the message you expect, you need:
+
+- A message digest / hashing algorithm
+- A key with an expected password
+- An expected message
+- A signature to verify
+
+You use an instance of `Signer` to verify an HMAC signature. The signature must be a `Data` object. The expected message can be any type supported by [`Hasher`](#hashing).
+
+#### Example
+
+To verify the SHA-256 HMAC of a String, you need to follow these steps:
+
+**1-** Create an HMAC key with the expected password
+
+~~~swift
+import Signature
+
+let key = try HMACKey(password: "secret")
+~~~
+
+**2-** Create an HMAC signer
+
+~~~swift
+let signer = Signer.hmac(key)
+~~~
+
+**3-** Verify the HMAC for the message
+
+~~~swift
+let hmacData = ...
+let messageData = "Hello world".data(using: .utf8)!
+let isValid = signer.verify(signature: hmacData, for: messageData, with: .sha256) // Returns a Bool
 ~~~
 
 
