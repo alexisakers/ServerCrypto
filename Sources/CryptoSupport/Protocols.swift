@@ -5,6 +5,9 @@
 
 import Foundation
 
+/// A sequence of bytes.
+public typealias Bytes = RandomAccessCollection & MutableCollection & RawBytesProviding
+
 /**
  * Provides a raw bytes-represented version of itself.
  */

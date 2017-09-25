@@ -24,7 +24,7 @@ swift build -Xswiftc -I/usr/local/opt/openssl/include -Xlinker -L/usr/local/opt/
 ## Features
 
 - [Hashing](#hashing)
-- HMAC Signature
+- [HMAC Signature](#hmac-signature)
 - HMAC Verification
 - Asymmetric Signature
 - Asymmetric Signature Verification
@@ -33,7 +33,7 @@ swift build -Xswiftc -I/usr/local/opt/openssl/include -Xlinker -L/usr/local/opt/
 
 To compute the hash of a sequence of bytes, you use an instance of `Hasher`.
 
-Hasher can generate hashes for `Data`, `[UInt8]` ; and any type than conforms to the `RandomAccessCollection`, `MutableCollection` and `RawBytesProviding` protocols with `Element == UInt8` and `IndexDistance == Int`.
+`Hasher` can generate hashes for `Data`, `[UInt8]` ; and any type than conforms to the `Bytes` protocols.
 
 The following hashing algorithms are supported:
 
@@ -54,3 +54,13 @@ let hashHexString = hashData.hexString
 ~~~
 
 Result = `64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c`
+
+
+### HMAC Signature
+
+
+
+
+
+
+

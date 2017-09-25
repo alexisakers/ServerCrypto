@@ -71,7 +71,7 @@ extension Hasher {
      * - returns: A `Data` object that contains the bytes of the hash.
      */
 
-    public func makeHash<T: RandomAccessCollection & MutableCollection & RawBytesProviding>(for bytes: T) throws -> Data
+    public func makeHash<T: Bytes>(for bytes: T) throws -> Data
         where T.Element == UInt8, T.IndexDistance == Int {
 
             CryptoProvider.load(.digests, .cryptoErrorStrings)

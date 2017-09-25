@@ -11,7 +11,7 @@
 		OBJ_105 /* CryptoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* CryptoError.swift */; };
 		OBJ_106 /* CryptoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* CryptoProvider.swift */; };
 		OBJ_107 /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Hex.swift */; };
-		OBJ_108 /* RawBytesProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* RawBytesProviding.swift */; };
+		OBJ_108 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Protocols.swift */; };
 		OBJ_58 /* CryptoErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* CryptoErrorTests.swift */; };
 		OBJ_59 /* HexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* HexTests.swift */; };
 		OBJ_60 /* HashTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* HashTestData.swift */; };
@@ -86,7 +86,7 @@
 		55B234A41F79648300CCCEE9 /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinuxMain.swift; path = Tests/LinuxMain.swift; sourceTree = "<group>"; };
 		OBJ_10 /* CryptoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoProvider.swift; sourceTree = "<group>"; };
 		OBJ_11 /* Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
-		OBJ_12 /* RawBytesProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawBytesProviding.swift; sourceTree = "<group>"; };
+		OBJ_12 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		OBJ_14 /* Exports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exports.swift; sourceTree = "<group>"; };
 		OBJ_15 /* Hasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hasher.swift; sourceTree = "<group>"; };
 		OBJ_17 /* AsymmetricKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsymmetricKey.swift; sourceTree = "<group>"; };
@@ -267,7 +267,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -277,7 +277,6 @@
 				OBJ_41 /* Dependencies */,
 				OBJ_42 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -296,7 +295,7 @@
 				OBJ_11 /* Hex.swift */,
 				OBJ_9 /* CryptoError.swift */,
 				OBJ_10 /* CryptoProvider.swift */,
-				OBJ_12 /* RawBytesProviding.swift */,
+				OBJ_12 /* Protocols.swift */,
 			);
 			name = CryptoSupport;
 			path = Sources/CryptoSupport;
@@ -391,7 +390,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_42 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -423,7 +422,7 @@
 				OBJ_105 /* CryptoError.swift in Sources */,
 				OBJ_106 /* CryptoProvider.swift in Sources */,
 				OBJ_107 /* Hex.swift in Sources */,
-				OBJ_108 /* RawBytesProviding.swift in Sources */,
+				OBJ_108 /* Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
