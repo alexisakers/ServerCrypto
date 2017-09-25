@@ -26,10 +26,10 @@ swift build -Xswiftc -I/usr/local/opt/openssl/include -Xlinker -L/usr/local/opt/
 - [Hashing](#hashing)
 - [HMAC Signature](#hmac-signature)
 - [HMAC Verification](#hmac-verification)
-- Asymmetric Signature
+- [Asymmetric Signature](#asymmetric-signature)
 - Asymmetric Signature Verification
 
-### Hashing
+## Hashing
 
 To compute the hash of a sequence of bytes, you use an instance of `Hasher`.
 
@@ -55,7 +55,7 @@ let hashData = try hasher.makeHash(for: messageData) // Returns a Data object
 let hashHexString = hashData.hexString
 ~~~
 
-### HMAC Signature
+## HMAC Signature
 
 To create an HMAC signature, you need:
 
@@ -91,7 +91,7 @@ let hmacData = signer.sign(messageData, with: .sha256) // Returns a Data object
 let hmacHexString = hmacData.hexString
 ~~~
 
-### HMAC Verification
+## HMAC Verification
 
 To verify that an HMAC signature is valid for the message you expect, you need:
 
@@ -128,4 +128,42 @@ let messageData = "Hello world".data(using: .utf8)!
 let isValid = signer.verify(signature: hmacData, for: messageData, with: .sha256) // Returns a Bool
 ~~~
 
+## Asymmetric Signature
 
+Signature.framework can generate signatures using private keys and algorithms like RSA and ECDSA.
+
+To create a signature, you need:
+
+- A message digest / hashing algorithm
+- A private PEM-encoded key
+- A message to sign
+
+You use an instance of `Signer` to generate a signature. Any type supported by [`Hasher`](#hashing) is also supported by `Signer`.
+
+#### Example
+
+To compute the SHA-256 ECDSA signature of a String, you need to follow these steps:
+
+**1-** Load a private key from a PEM file:
+
+~~~swift
+import Signature
+
+let privateKey = try AsymmetricKey.makePrivateKey(readingPEMAtPath: "path/to/key.pem")
+~~~
+
+You can also load a PEM key from memory using `AsymmetricKey.makePrivateKey(readingPEMData:)`.
+
+**2-** Create an asymmetric signer
+
+~~~swift
+let signer = Signer.asymmetric(privateKey)
+~~~
+
+**3-** Get the signature for the message
+
+~~~swift
+let messageData = "Hello world".data(using: .utf8)!
+let hmacData = signer.sign(messageData, with: .sha256) // Returns a Data object
+let hmacHexString = hmacData.hexString
+~~~
