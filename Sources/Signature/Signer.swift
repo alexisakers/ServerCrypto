@@ -115,6 +115,23 @@ extension Signer {
     public func verify<T: RandomAccessCollection & MutableCollection & RawBytesProviding>(signature: Data, for message: T, with hasher: Hasher) throws -> Bool
         where T.Element == UInt8, T.IndexDistance == Int {
 
+            CryptoProvider.load(.digests, .ciphers, .cryptoErrorStrings)
+
+            switch self {
+            case .asymmetric:
+                return try verify_evp(signature: signature, for: message, with: hasher)
+
+            case .hmac:
+                return try verify_hmac(signature: signature, for: message, with: hasher)
+
+            }
+
+
+    }
+
+    private func verify_evp<T: RandomAccessCollection & MutableCollection & RawBytesProviding>(signature: Data, for message: T, with hasher: Hasher) throws -> Bool
+        where T.Element == UInt8, T.IndexDistance == Int {
+
             var mutableSignature = signature
 
             guard let messageDigest = hasher.makeMessageDigest() else {
@@ -151,6 +168,27 @@ extension Signer {
             }
 
             return verificationResult == 1
+
+    }
+
+    private func verify_hmac<T: RandomAccessCollection & MutableCollection & RawBytesProviding>(signature: Data, for message: T, with hasher: Hasher) throws -> Bool
+        where T.Element == UInt8, T.IndexDistance == Int {
+
+            let expectedSignature = try self.sign(message: message, with: hasher)
+
+            guard expectedSignature.count == signature.count else {
+                return false
+            }
+
+            return expectedSignature.withUnsafeRawBytes {
+                expectedPtr in
+
+                signature.withUnsafeRawBytes {
+                    signaturePtr in
+                    return CRYPTO_memcmp(signaturePtr, expectedPtr, signature.count) == 0
+                }
+
+            }
 
     }
 
