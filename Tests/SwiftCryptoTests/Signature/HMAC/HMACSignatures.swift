@@ -23,9 +23,9 @@ struct HMACSignature {
     
 }
 
-// MARK: - HMAC Test Vectors
+// MARK: - HMAC Signatures
 
-let hmd4Signatures: [HMACSignature] = [
+let hmd4Signatures = [
     HMACSignature(.md4, "secret", "4869205468657265", "aa52213133eae9ae2adb86f01d79b098"),
     HMACSignature(.md4, "secret", "7768617420646f2079612077616e7420666f72206e6f7468696e673f", "896d9c033fcb197f1bd1993f716eea91"),
     HMACSignature(.md4, "secret", "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "87b258f40db19d2059736988801f7dd0"),
@@ -34,7 +34,7 @@ let hmd4Signatures: [HMACSignature] = [
     HMACSignature(.md4, "secret", "54657374205573696e67204c6172676572205468616e20426c6f636b2d53697a65204b6579202d2048617368204b6579204669727374", "73847ea99388a189f50c5a0c552b76c1")
 ]
 
-let hmd5Signatures: [HMACSignature] = [
+let hmd5Signatures = [
     HMACSignature(.md5, "secret", "4869205468657265", "1f337b759bb8c23e9f9ef1d28f6ac822"),
     HMACSignature(.md5, "secret", "7768617420646f2079612077616e7420666f72206e6f7468696e673f", "8d5b74cac41c45a0f22b7a353bdb27b7"),
     HMACSignature(.md5, "secret", "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "3bd09138f1c959fc9a85040f2613aa9c"),
@@ -43,7 +43,7 @@ let hmd5Signatures: [HMACSignature] = [
     HMACSignature(.md5, "secret", "54657374205573696e67204c6172676572205468616e20426c6f636b2d53697a65204b6579202d2048617368204b6579204669727374", "731738a059b3f585bfdf5a810280101e")
 ]
 
-let hs1Signatures: [HMACSignature] = [
+let hs1Signatures = [
     HMACSignature(.sha1, "secret", "4869205468657265", "dd3c907046caa39e26428dd00afd66e7ba758fd0"),
     HMACSignature(.sha1, "secret", "7768617420646f2079612077616e7420666f72206e6f7468696e673f", "e65afa52fc891d188ded82a4a35ebe3cd04be9bc"),
     HMACSignature(.sha1, "secret", "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "6b9f8180b03d020da32941c757d9683cf1b43c19"),
@@ -52,7 +52,7 @@ let hs1Signatures: [HMACSignature] = [
     HMACSignature(.sha1, "secret", "54657374205573696e67204c6172676572205468616e20426c6f636b2d53697a65204b6579202d2048617368204b6579204669727374", "582bc4f8dd7ab86337234ddb680aad33f9a77536")
 ]
 
-let hs224Signatures: [HMACSignature] = [
+let hs224Signatures = [
     HMACSignature(.sha224, "secret", "4869205468657265", "0109f3443e9dbdcd9b3c588ce3a284bd72a17ab9d01771a6aa901305"),
     HMACSignature(.sha224, "secret", "7768617420646f2079612077616e7420666f72206e6f7468696e673f", "c514a97333c41c9f76ba475560fe46d3a02665c560632cd7ba7ed11a"),
     HMACSignature(.sha224, "secret", "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "82f9b92da6cd4d349bfb6513fd8b211bcfc7c204d2682d8f6a60c728"),
@@ -61,7 +61,7 @@ let hs224Signatures: [HMACSignature] = [
     HMACSignature(.sha224, "secret", "54657374205573696e67204c6172676572205468616e20426c6f636b2d53697a65204b6579202d2048617368204b6579204669727374", "ef373b7722c72be96f1f17b376814ef97f2da0db8abe962c61fff448")
 ]
 
-let hs256Signatures: [HMACSignature] = [
+let hs256Signatures = [
     HMACSignature(.sha256, "secret", "4869205468657265", "891972b1433ed6038585b2af44c757398e050d411ffcde118f271b5d2b637168"),
     HMACSignature(.sha256, "secret", "7768617420646f2079612077616e7420666f72206e6f7468696e673f", "ae974fb8f1d2f09aab9bcb0354946ace98a2976bd7204c43c0844ddbeae11977"),
     HMACSignature(.sha256, "secret", "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "245b32c433a7fbf112a7e1b61ad6caa8f53df23698f094a7c966c81a597c1653"),
@@ -70,7 +70,7 @@ let hs256Signatures: [HMACSignature] = [
     HMACSignature(.sha256, "secret", "54657374205573696e67204c6172676572205468616e20426c6f636b2d53697a65204b6579202d2048617368204b6579204669727374", "ea5ae39f48fef23342b288e26305d4e359f961c741a85a2f5cdd9ebe02db5e3f")
 ]
 
-let hs384Signatures: [HMACSignature] = [
+let hs384Signatures = [
     HMACSignature(.sha384, "secret", "4869205468657265", "4f8435f1cfe3fe1342ea0961e1cf3fda4b2e061d16b69216f717e321fd2981298986e7f3ecfd178833f4500cfbcdb56d"),
     HMACSignature(.sha384, "secret", "7768617420646f2079612077616e7420666f72206e6f7468696e673f", "a149f16c4e2ba0eda01cfce43998b2ee71424ae6d1bc6e73fa63738c5faf2a196793379af11e2979b1e1994a1f8aa5b1"),
     HMACSignature(.sha384, "secret", "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "e54431ad21df0e8c28a080c334c158e826ba1e09746ed2eebfb9727418cf3f65f9758aaba33835b4fc9e75f3e50054bb"),
@@ -79,7 +79,7 @@ let hs384Signatures: [HMACSignature] = [
     HMACSignature(.sha384, "secret", "54657374205573696e67204c6172676572205468616e20426c6f636b2d53697a65204b6579202d2048617368204b6579204669727374", "a35407dab3248ab81f7451f9675e8b55af2de0c41f77634865b07ef0dbbdd10c018426aaa883b00c69868db802b58653")
 ]
 
-let hs512Signatures: [HMACSignature] = [
+let hs512Signatures = [
     HMACSignature(.sha512, "secret", "4869205468657265", "278dcfbdedead24e23633f1f7057dffbaf6ee8c706a4da19a6028c90ccf28708cdb3cbd224e4d12bbcb0a44a615622938509a20f8b3e4963cec715a211957b81"),
     HMACSignature(.sha512, "secret", "7768617420646f2079612077616e7420666f72206e6f7468696e673f", "f7047c2e9e2afb00865108fa062e9605b97e7a40652d3660624dd88acb2f5cb12daebdfc19c1472993fce4d3752a3b3dbd0e07c7c37bfcdbdc777d166c705a88"),
     HMACSignature(.sha512, "secret", "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "1e99362a14801505715619e10260ad124d36cff093dba67fb026e12a5f032707df9991db219d0d63e18f89df21bceac0bba085b521ec792fac38a9063c96d1cd"),
@@ -88,7 +88,7 @@ let hs512Signatures: [HMACSignature] = [
     HMACSignature(.sha512, "secret", "54657374205573696e67204c6172676572205468616e20426c6f636b2d53697a65204b6579202d2048617368204b6579204669727374", "534ab2f3ac9fdfe41ca6c761c87def5dcd8e8aa6f14a676909014092ae3bf4fa0f36bedebe0842f52e89b29686822c577742d6873b5b551c86d960685a2bf2bf")
 ]
 
-let hrmd160Signatures: [HMACSignature] = [
+let hrmd160Signatures = [
     HMACSignature(.ripeMd160, "secret", "4869205468657265", "652483494188b83c0cf114c9ad78a732de26a220"),
     HMACSignature(.ripeMd160, "secret", "7768617420646f2079612077616e7420666f72206e6f7468696e673f", "23e73b856e4804300b1fbd40587d97ca36dfcbfb"),
     HMACSignature(.ripeMd160, "secret", "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "a356873991ac57e844bed4484b14469c744321d4"),
@@ -97,9 +97,9 @@ let hrmd160Signatures: [HMACSignature] = [
     HMACSignature(.ripeMd160, "secret", "54657374205573696e67204c6172676572205468616e20426c6f636b2d53697a65204b6579202d2048617368204b6579204669727374", "ce9268e72624ae8f04408b12249f40aa33e795f8")
 ]
 
-// MARK: - Fake HMAC Test vectors
+// MARK: - Fake HMAC Signatures
 
-let hmd4FakeSignatures: [HMACSignature] = [
+let hmd4FakeSignatures = [
     HMACSignature(.md4, "secret", "4869205468657265", "aa52213133eae9ae2adb86f01d79b099"),
     HMACSignature(.md4, "secret", "7768617420646f2079612077616e7420666f72206e6f7468696e673f", "896d9c033fcb197f1bd1993f716eea92"),
     HMACSignature(.md4, "secret", "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "87b258f40db19d2059736988801f7dd1"),
@@ -108,7 +108,7 @@ let hmd4FakeSignatures: [HMACSignature] = [
     HMACSignature(.md4, "secret", "54657374205573696e67204c6172676572205468616e20426c6f636b2d53697a65204b6579202d2048617368204b6579204669727374", "73847ea99388a189f50c")
 ]
 
-let hmd5FakeSignatures: [HMACSignature] = [
+let hmd5FakeSignatures = [
     HMACSignature(.md5, "secret", "4869205468657265", "1f337b759bb8c23e9f9ef1d28f6ac823"),
     HMACSignature(.md5, "secret", "7768617420646f2079612077616e7420666f72206e6f7468696e673f", "8d5b74cac41c45a0f22b7a353bdb27b8"),
     HMACSignature(.md5, "secret", "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "3bd09138f1c959fc9a85040f2613aa9d"),
@@ -117,7 +117,7 @@ let hmd5FakeSignatures: [HMACSignature] = [
     HMACSignature(.md5, "secret", "54657374205573696e67204c6172676572205468616e20426c6f636b2d53697a65204b6579202d2048617368204b6579204669727374", "731738a059b10280101f")
 ]
 
-let hs1FakeSignatures: [HMACSignature] = [
+let hs1FakeSignatures = [
     HMACSignature(.sha1, "secret", "4869205468657265", "dd3c907046caa39e26428dd00afd66e7ba758fd1"),
     HMACSignature(.sha1, "secret", "7768617420646f2079612077616e7420666f72206e6f7468696e673f", "e65afa52fc891d188ded82a4a35ebe3cd04be9bd"),
     HMACSignature(.sha1, "secret", "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "6b9f8180b03d020da32941c757d9683cf1b43c1a"),
@@ -126,7 +126,7 @@ let hs1FakeSignatures: [HMACSignature] = [
     HMACSignature(.sha1, "secret", "54657374205573696e67204c6172676572205468616e20426c6f636b2d53697a65204b6579202d2048617368204b6579204669727374", "582bc4f80aad33f9a77537")
 ]
 
-let hs224FakeSignatures: [HMACSignature] = [
+let hs224FakeSignatures = [
     HMACSignature(.sha224, "secret", "4869205468657265", "0109f3443e9dbdcd9b3c588ce3a284bd72a17ab9d01771a6aa901306"),
     HMACSignature(.sha224, "secret", "7768617420646f2079612077616e7420666f72206e6f7468696e673f", "c514a97333c41c9f76ba475560fe46d3a02665c560632cd7ba7ed11b"),
     HMACSignature(.sha224, "secret", "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "82f9b92da6cd4d349bfb6513fd8b211bcfc7c204d2682d8f6a60c729"),
@@ -135,7 +135,7 @@ let hs224FakeSignatures: [HMACSignature] = [
     HMACSignature(.sha224, "secret", "54657374205573696e67204c6172676572205468616e20426c6f636b2d53697a65204b6579202d2048617368204b6579204669727374", "ef373b77b376814ef97f2da0db8abe962c61fff449")
 ]
 
-let hs256FakeSignatures: [HMACSignature] = [
+let hs256FakeSignatures = [
     HMACSignature(.sha256, "secret", "4869205468657265", "891972b1433ed6038585b2af44c757398e050d411ffcde118f271b5d2b637169"),
     HMACSignature(.sha256, "secret", "7768617420646f2079612077616e7420666f72206e6f7468696e673f", "ae974fb8f1d2f09aab9bcb0354946ace98a2976bd7204c43c0844ddbeae11978"),
     HMACSignature(.sha256, "secret", "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "245b32c433a7fbf112a7e1b61ad6caa8f53df23698f094a7c966c81a597c1654"),
@@ -144,7 +144,7 @@ let hs256FakeSignatures: [HMACSignature] = [
     HMACSignature(.sha256, "secret", "54657374205573696e67204c6172676572205468616e20426c6f636b2d53697a65204b6579202d2048617368204b6579204669727374", "ea5a26305d4e359f961c741a85a2f5cdd9ebe02db5e30")
 ]
 
-let hs384FakeSignatures: [HMACSignature] = [
+let hs384FakeSignatures = [
     HMACSignature(.sha384, "secret", "4869205468657265", "4f8435f1cfe3fe1342ea0961e1cf3fda4b2e061d16b69216f717e321fd2981298986e7f3ecfd178833f4500cfbcdb56e"),
     HMACSignature(.sha384, "secret", "7768617420646f2079612077616e7420666f72206e6f7468696e673f", "a149f16c4e2ba0eda01cfce43998b2ee71424ae6d1bc6e73fa63738c5faf2a196793379af11e2979b1e1994a1f8aa5b2"),
     HMACSignature(.sha384, "secret", "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "e54431ad21df0e8c28a080c334c158e826ba1e09746ed2eebfb9727418cf3f65f9758aaba33835b4fc9e75f3e50054bc"),
@@ -153,7 +153,7 @@ let hs384FakeSignatures: [HMACSignature] = [
     HMACSignature(.sha384, "secret", "54657374205573696e67204c6172676572205468616e20426c6f636b2d53697a65204b6579202d2048617368204b6579204669727374", "a35407dab3248ab81f7451f9675e8b55af2de0c8426aaa883b00c69868db802b58654")
 ]
 
-let hs512FakeSignatures: [HMACSignature] = [
+let hs512FakeSignatures = [
     HMACSignature(.sha512, "secret", "4869205468657265", "278dcfbdedead24e23633f1f7057dffbaf6ee8c706a4da19a6028c90ccf28708cdb3cbd224e4d12bbcb0a44a615622938509a20f8b3e4963cec715a211957b82"),
     HMACSignature(.sha512, "secret", "7768617420646f2079612077616e7420666f72206e6f7468696e673f", "f7047c2e9e2afb00865108fa062e9605b97e7a40652d3660624dd88acb2f5cb12daebdfc19c1472993fce4d3752a3b3dbd0e07c7c37bfcdbdc777d166c705a89"),
     HMACSignature(.sha512, "secret", "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "1e99362a14801505715619e10260ad124d36cff093dba67fb026e12a5f032707df9991db219d0d63e18f89df21bceac0bba085b521ec792fac38a9063c96d1ce"),
@@ -162,7 +162,7 @@ let hs512FakeSignatures: [HMACSignature] = [
     HMACSignature(.sha512, "secret", "54657374205573696e67204c6172676572205468616e20426c6f636b2d53697a65204b6579202d2048617368204b6579204669727374", "534ab2f3ac9fdfe41ca09014092ae3bf4fa0f36bedebe0842f52e89b29686822c577742d6873b5b551c86d960685a2bf2b0")
 ]
 
-let hrmd160FakeSignatures: [HMACSignature] = [
+let hrmd160FakeSignatures = [
     HMACSignature(.ripeMd160, "secret", "4869205468657265", "652483494188b83c0cf114c9ad78a732de26a221"),
     HMACSignature(.ripeMd160, "secret", "7768617420646f2079612077616e7420666f72206e6f7468696e673f", "23e73b856e4804300b1fbd40587d97ca36dfcbfc"),
     HMACSignature(.ripeMd160, "secret", "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "a356873991ac57e844bed4484b14469c744321d5"),
