@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/alexaubry/ServerCrypto.svg?branch=master)](https://travis-ci.org/alexaubry/ServerCrypto)
 [![Requires Swift 4.0](https://img.shields.io/badge/Swift-4.0-ee4f37.svg)]()
+[![Supports macOS and Linux](https://img.shields.io/badge/os-linux%20%7C%20macOS-lightgrey.svg)]()
 
 ServerCrypto is a library that makes server-side cryptography easy in Swift.
 
