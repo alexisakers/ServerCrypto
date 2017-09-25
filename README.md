@@ -46,6 +46,8 @@ The following hashing algorithms are supported:
 To compute the SHA-256 hash of a String, write the following code:
 
 ~~~swift
+import Hash
+
 let hasher = Hasher.sha256
 
 let messageData = "Hello world".data(using: .utf8)!
@@ -53,14 +55,40 @@ let hashData = try hasher.makeHash(for: messageData) // Returns a Data object
 let hashHexString = hashData.hexString
 ~~~
 
-Result = `64ec88ca00b268e5ba1a35678a1b5316d212f4f366b2477232534a8aeca37f3c`
-
-
 ### HMAC Signature
 
+To create an HMAC signature, you need:
 
+- A message digest / hashing algorithm
+- A key with a password
+- A message to sign
 
+You use an instance of `Signer` to generate an HMAC signature. Any type supported by [`Hasher`](#hashing) is also supported by `Signer`.
 
+#### Example
 
+To compute the SHA-256 HMAC of a String, you need to follow these steps:
+
+**1-** Create an HMAC key with a password
+
+~~~swift
+import Signature
+
+let key = try HMACKey(password: "secret")
+~~~
+
+**2-** Create an HMAC signer
+
+~~~swift
+let signer = Signer.hmac(key)
+~~~
+
+**3-** Get the HMAC for the message
+
+~~~swift
+let messageData = "Hello world".data(using: .utf8)!
+let hmacData = signer.sign(messageData, with: .sha256) // Returns a Data object
+let hmacHexString = hmacData.hexString
+~~~
 
 
