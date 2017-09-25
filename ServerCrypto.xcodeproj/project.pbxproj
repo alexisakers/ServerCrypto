@@ -6,12 +6,27 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		"ServerCrypto::ServerCryptoPackageTests::ProductTarget" /* ServerCryptoPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_111 /* Build configuration list for PBXAggregateTarget "ServerCryptoPackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_114 /* PBXTargetDependency */,
+			);
+			name = ServerCryptoPackageTests;
+			productName = ServerCryptoPackageTests;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		55B234A31F795FAD00CCCEE9 /* TestFixtures in Resources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* TestFixtures */; };
+		55B463121F7996CF00D3F0AA /* TestFixtures in Resources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* TestFixtures */; };
 		OBJ_105 /* CryptoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* CryptoError.swift */; };
 		OBJ_106 /* CryptoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* CryptoProvider.swift */; };
 		OBJ_107 /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Hex.swift */; };
 		OBJ_108 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Protocols.swift */; };
+		OBJ_52 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_58 /* CryptoErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* CryptoErrorTests.swift */; };
 		OBJ_59 /* HexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* HexTests.swift */; };
 		OBJ_60 /* HashTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* HashTestData.swift */; };
@@ -38,52 +53,58 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		55B2349B1F795EDD00CCCEE9 /* PBXContainerItemProxy */ = {
+		55B4630A1F79965000D3F0AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "ServerCrypto::CryptoSupport";
+			remoteInfo = CryptoSupport;
+		};
+		55B4630B1F79965000D3F0AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "ServerCrypto::Hash";
 			remoteInfo = Hash;
 		};
-		55B2349C1F795EDD00CCCEE9 /* PBXContainerItemProxy */ = {
+		55B4630C1F79965000D3F0AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "ServerCrypto::CryptoSupport";
 			remoteInfo = CryptoSupport;
 		};
-		55B2349D1F795EDD00CCCEE9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "ServerCrypto::CryptoSupport";
-			remoteInfo = CryptoSupport;
-		};
-		55B2349E1F795EDD00CCCEE9 /* PBXContainerItemProxy */ = {
+		55B4630D1F79965000D3F0AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "ServerCrypto::Signature";
 			remoteInfo = Signature;
 		};
-		55B2349F1F795EDD00CCCEE9 /* PBXContainerItemProxy */ = {
+		55B4630E1F79965000D3F0AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "ServerCrypto::Hash";
 			remoteInfo = Hash;
 		};
-		55B234A01F795EDD00CCCEE9 /* PBXContainerItemProxy */ = {
+		55B4630F1F79965000D3F0AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "ServerCrypto::CryptoSupport";
 			remoteInfo = CryptoSupport;
 		};
+		55B463101F79965100D3F0AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "ServerCrypto::ServerCryptoTests";
+			remoteInfo = ServerCryptoTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		55B234A41F79648300CCCEE9 /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinuxMain.swift; path = Tests/LinuxMain.swift; sourceTree = "<group>"; };
 		OBJ_10 /* CryptoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoProvider.swift; sourceTree = "<group>"; };
 		OBJ_11 /* Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -154,8 +175,8 @@
 		OBJ_13 /* Hash */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_15 /* Hasher.swift */,
 				OBJ_14 /* Exports.swift */,
+				OBJ_15 /* Hasher.swift */,
 			);
 			name = Hash;
 			path = Sources/Hash;
@@ -164,10 +185,10 @@
 		OBJ_16 /* Signature */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_20 /* Signer.swift */,
-				OBJ_19 /* HMACKey.swift */,
 				OBJ_17 /* AsymmetricKey.swift */,
 				OBJ_18 /* Exports.swift */,
+				OBJ_19 /* HMACKey.swift */,
+				OBJ_20 /* Signer.swift */,
 			);
 			name = Signature;
 			path = Sources/Signature;
@@ -176,7 +197,6 @@
 		OBJ_21 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				55B234A41F79648300CCCEE9 /* LinuxMain.swift */,
 				OBJ_22 /* ServerCryptoTests */,
 			);
 			name = Tests;
@@ -196,8 +216,8 @@
 		OBJ_23 /* CryptoSupport */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_25 /* HexTests.swift */,
 				OBJ_24 /* CryptoErrorTests.swift */,
+				OBJ_25 /* HexTests.swift */,
 			);
 			path = CryptoSupport;
 			sourceTree = "<group>";
@@ -205,8 +225,8 @@
 		OBJ_26 /* Hash */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_28 /* HashTests.swift */,
 				OBJ_27 /* HashTestData.swift */,
+				OBJ_28 /* HashTests.swift */,
 			);
 			path = Hash;
 			sourceTree = "<group>";
@@ -214,10 +234,10 @@
 		OBJ_29 /* Signature */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_39 /* SignatureTestsCoordinator.swift */,
-				OBJ_33 /* HMAC */,
 				OBJ_30 /* ECDSA */,
+				OBJ_33 /* HMAC */,
 				OBJ_36 /* RSA */,
+				OBJ_39 /* SignatureTestsCoordinator.swift */,
 			);
 			path = Signature;
 			sourceTree = "<group>";
@@ -225,8 +245,8 @@
 		OBJ_30 /* ECDSA */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_32 /* ECDSATests.swift */,
 				OBJ_31 /* ECDSASignatures.swift */,
+				OBJ_32 /* ECDSATests.swift */,
 			);
 			path = ECDSA;
 			sourceTree = "<group>";
@@ -234,8 +254,8 @@
 		OBJ_33 /* HMAC */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_35 /* HMACTests.swift */,
 				OBJ_34 /* HMACSignatures.swift */,
+				OBJ_35 /* HMACTests.swift */,
 			);
 			path = HMAC;
 			sourceTree = "<group>";
@@ -243,8 +263,8 @@
 		OBJ_36 /* RSA */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_38 /* RSATests.swift */,
 				OBJ_37 /* RSATestVectors.swift */,
+				OBJ_38 /* RSATests.swift */,
 			);
 			path = RSA;
 			sourceTree = "<group>";
@@ -267,7 +287,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 = {
+		OBJ_5 /*  */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -277,6 +297,7 @@
 				OBJ_41 /* Dependencies */,
 				OBJ_42 /* Products */,
 			);
+			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -292,9 +313,9 @@
 		OBJ_8 /* CryptoSupport */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_11 /* Hex.swift */,
 				OBJ_9 /* CryptoError.swift */,
 				OBJ_10 /* CryptoProvider.swift */,
+				OBJ_11 /* Hex.swift */,
 				OBJ_12 /* Protocols.swift */,
 			);
 			name = CryptoSupport;
@@ -343,7 +364,7 @@
 			buildPhases = (
 				OBJ_57 /* Sources */,
 				OBJ_69 /* Frameworks */,
-				55B234A21F795FA500CCCEE9 /* Resources */,
+				55B463111F7996CA00D3F0AA /* Resources */,
 			);
 			buildRules = (
 			);
@@ -375,6 +396,20 @@
 			productReference = "ServerCrypto::Signature::Product" /* Signature.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		"ServerCrypto::SwiftPMPackageDescription" /* ServerCryptoPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_48 /* Build configuration list for PBXNativeTarget "ServerCryptoPackageDescription" */;
+			buildPhases = (
+				OBJ_51 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ServerCryptoPackageDescription;
+			productName = ServerCryptoPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -390,25 +425,27 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5;
+			mainGroup = OBJ_5 /*  */;
 			productRefGroup = OBJ_42 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"ServerCrypto::CryptoSupport" /* CryptoSupport */,
-				"ServerCrypto::Hash" /* Hash */,
-				"ServerCrypto::Signature" /* Signature */,
+				"ServerCrypto::SwiftPMPackageDescription" /* ServerCryptoPackageDescription */,
 				"ServerCrypto::ServerCryptoTests" /* ServerCryptoTests */,
+				"ServerCrypto::Signature" /* Signature */,
+				"ServerCrypto::Hash" /* Hash */,
+				"ServerCrypto::CryptoSupport" /* CryptoSupport */,
+				"ServerCrypto::ServerCryptoPackageTests::ProductTarget" /* ServerCryptoPackageTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		55B234A21F795FA500CCCEE9 /* Resources */ = {
+		55B463111F7996CA00D3F0AA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55B234A31F795FAD00CCCEE9 /* TestFixtures in Resources */,
+				55B463121F7996CF00D3F0AA /* TestFixtures in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +460,14 @@
 				OBJ_106 /* CryptoProvider.swift in Sources */,
 				OBJ_107 /* Hex.swift in Sources */,
 				OBJ_108 /* Protocols.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_52 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,32 +515,37 @@
 		OBJ_100 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "ServerCrypto::CryptoSupport" /* CryptoSupport */;
-			targetProxy = 55B2349C1F795EDD00CCCEE9 /* PBXContainerItemProxy */;
+			targetProxy = 55B4630A1F79965000D3F0AA /* PBXContainerItemProxy */;
+		};
+		OBJ_114 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "ServerCrypto::ServerCryptoTests" /* ServerCryptoTests */;
+			targetProxy = 55B463101F79965100D3F0AA /* PBXContainerItemProxy */;
 		};
 		OBJ_73 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "ServerCrypto::Signature" /* Signature */;
-			targetProxy = 55B2349E1F795EDD00CCCEE9 /* PBXContainerItemProxy */;
+			targetProxy = 55B4630D1F79965000D3F0AA /* PBXContainerItemProxy */;
 		};
 		OBJ_75 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "ServerCrypto::Hash" /* Hash */;
-			targetProxy = 55B2349F1F795EDD00CCCEE9 /* PBXContainerItemProxy */;
+			targetProxy = 55B4630E1F79965000D3F0AA /* PBXContainerItemProxy */;
 		};
 		OBJ_77 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "ServerCrypto::CryptoSupport" /* CryptoSupport */;
-			targetProxy = 55B234A01F795EDD00CCCEE9 /* PBXContainerItemProxy */;
+			targetProxy = 55B4630F1F79965000D3F0AA /* PBXContainerItemProxy */;
 		};
 		OBJ_90 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "ServerCrypto::Hash" /* Hash */;
-			targetProxy = 55B2349B1F795EDD00CCCEE9 /* PBXContainerItemProxy */;
+			targetProxy = 55B4630B1F79965000D3F0AA /* PBXContainerItemProxy */;
 		};
 		OBJ_91 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "ServerCrypto::CryptoSupport" /* CryptoSupport */;
-			targetProxy = 55B2349D1F795EDD00CCCEE9 /* PBXContainerItemProxy */;
+			targetProxy = 55B4630C1F79965000D3F0AA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -550,6 +600,18 @@
 			};
 			name = Release;
 		};
+		OBJ_112 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_113 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
 		OBJ_3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -567,7 +629,7 @@
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USE_HEADERMAP = NO;
@@ -589,10 +651,28 @@
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -750,11 +830,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		OBJ_111 /* Build configuration list for PBXAggregateTarget "ServerCryptoPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_112 /* Debug */,
+				OBJ_113 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		OBJ_2 /* Build configuration list for PBXProject "ServerCrypto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_3 /* Debug */,
 				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_48 /* Build configuration list for PBXNativeTarget "ServerCryptoPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_49 /* Debug */,
+				OBJ_50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

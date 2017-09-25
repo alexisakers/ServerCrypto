@@ -162,9 +162,8 @@ extension Signer {
 
             /* Final */
 
-            let verificationResult = signature.withUnsafeBytes {
-                (body: UnsafePointer<UInt8>) -> Int32 in
-                return EVP_DigestVerifyFinal(context, body, signature.count)
+            let verificationResult: Int32 = signature.withAutomaticPointer {
+                return EVP_DigestVerifyFinal(context, $0, signature.count)
             }
 
             return verificationResult == 1

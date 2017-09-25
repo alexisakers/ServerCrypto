@@ -2,6 +2,9 @@
 set -e
 
 if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
+
+    echo "👉  Building with Xcode"
+	xcodebuild clean build -project ServerCrypto.xcodeproj -scheme ServerCrypto | xcpretty
 	
 	echo "👉  Building with SPM in Debug mode"
 	swift package clean

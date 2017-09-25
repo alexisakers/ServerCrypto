@@ -1,5 +1,5 @@
 import XCTest
-@testable import SwiftCryptoTests
+@testable import ServerCryptoTests
 
 XCTMain([
     testCase(HexTests.allTests),
