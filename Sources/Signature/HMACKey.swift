@@ -25,13 +25,9 @@ public class HMACKey {
 
         CryptoProvider.load(.digests, .cryptoErrorStrings)
 
-        let optionalKey = password.withUnsafeBytes {
-            (buf: UnsafePointer<UInt8>) -> UnsafeMutablePointer<EVP_PKEY>! in
+        let key = password.withUnsafeBytes {
+            (buf: UnsafePointer<UInt8>) -> UnsafeMutablePointer<EVP_PKEY> in
             return EVP_PKEY_new_mac_key(EVP_PKEY_HMAC, nil, buf, Int32(password.count))
-        }
-
-        guard let key = optionalKey else {
-            throw CryptoError.latest
         }
 
         underlyingKeyPointer = key
