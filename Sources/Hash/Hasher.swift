@@ -72,7 +72,7 @@ extension Hasher {
      */
 
     public func makeHash<T: Bytes>(for bytes: T) throws -> Data
-        where T.Element == UInt8, T.IndexDistance == Int {
+        where T.Element == UInt8 {
 
             CryptoProvider.load(.digests, .cryptoErrorStrings)
 
