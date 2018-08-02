@@ -47,8 +47,8 @@ extension Signer {
      * - throws: A `CryptoError` on failure.
      */
 
-    public func sign<T: Bytes>(message: T, with hasher: Hasher) throws -> Data
-        where T.Element == UInt8, T.IndexDistance == Int {
+    public func sign<T: Bytes>(message: T, with hasher: Hash.Hasher) throws -> Data
+        where T.Element == UInt8 {
 
             CryptoProvider.load(.digests, .ciphers, .cryptoErrorStrings)
 
@@ -112,8 +112,8 @@ extension Signer {
      * - throws: A `CryptoError` on failure.
      */
 
-    public func verify<T: Bytes>(signature: Data, for message: T, with hasher: Hasher) throws -> Bool
-        where T.Element == UInt8, T.IndexDistance == Int {
+    public func verify<T: Bytes>(signature: Data, for message: T, with hasher: Hash.Hasher) throws -> Bool
+        where T.Element == UInt8 {
 
             CryptoProvider.load(.digests, .ciphers, .cryptoErrorStrings)
 
@@ -129,8 +129,8 @@ extension Signer {
 
     }
 
-    private func verify_evp<T: Bytes>(signature: Data, for message: T, with hasher: Hasher) throws -> Bool
-        where T.Element == UInt8, T.IndexDistance == Int {
+    private func verify_evp<T: Bytes>(signature: Data, for message: T, with hasher: Hash.Hasher) throws -> Bool
+        where T.Element == UInt8 {
 
             var mutableSignature = signature
 
@@ -170,8 +170,8 @@ extension Signer {
 
     }
 
-    private func verify_hmac<T: Bytes>(signature: Data, for message: T, with hasher: Hasher) throws -> Bool
-        where T.Element == UInt8, T.IndexDistance == Int {
+    private func verify_hmac<T: Bytes>(signature: Data, for message: T, with hasher: Hash.Hasher) throws -> Bool
+        where T.Element == UInt8 {
 
             let expectedSignature = try self.sign(message: message, with: hasher)
 
